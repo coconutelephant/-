@@ -1,0 +1,83 @@
+/*
+У програмі зроблено описи таких типів:
+
+enum month=(jan, feb, math, apr, may, jun, jul, aug, sep, oct, nov, dec);
+
+enum month m;
+
+У програмі також задані натуральне число n (1≤n≤1two). Вивести назву n-го місяця.
+*/
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include <time.h>
+#pragma warning(disable : 4996)
+ enum month {Jan, Feb, Math, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+ enum number { one, two, three, four, five, six, seven, eight, nine, ten, eleven,twelve };
+ void input(char* mon, enum month* c)
+ {
+        if (strcmp(mon, "Jan") == 0) { *c = Jan; return; }
+        if (strcmp(mon, "Feb") == 0) { *c = Feb; return; }
+        if (strcmp(mon, "Math") == 0) { *c = Math; return; }
+        if (strcmp(mon, "Apr") == 0) { *c = Apr; return; }
+        if (strcmp(mon, "May") == 0) { *c = May; return; }
+        if (strcmp(mon, "Jun") == 0) { *c = Jun; return; }
+        if (strcmp(mon, "Jul") == 0) { *c = Jul; return; }
+        if (strcmp(mon, "Aug") == 0) { *c = Aug; return; }
+        if (strcmp(mon, "Sep") == 0) { *c = Sep; return; }
+        if (strcmp(mon, "Oct") == 0) { *c = Oct; return; }
+        if (strcmp(mon, "Nov") == 0) { *c = Nov; return; }
+        if (strcmp(mon, "Dec") == 0) { *c = Dec; return; }
+ }
+ void change(enum month c, enum number* order)
+ {
+     switch (c)
+     {
+        case Jan:*order = one; break;
+        case Feb:*order = two; break;
+        case Math:*order = three; break;
+        case Apr:*order = four; break;
+        case May:*order = five; break;
+        case Jun:*order = six; break;
+        case Jul:*order = seven; break;
+        case Aug:*order = eight; break;
+        case Sep:*order = nine; break;
+        case Oct:*order = ten; break;
+        case Nov:*order = eleven; break;
+        case Dec:*order = twelve; break;
+     }
+     
+ }
+ void output(enum number order)
+{
+    switch (order)
+	{
+	    case one: printf("\none"); break;
+	    case two: printf("\ntwo"); break;
+	    case three: printf("\nthree"); break;
+	    case four: printf("\nfour"); break;
+	    case five: printf("\nfive"); break;
+	    case six: printf("\nsix"); break;
+	    case seven: printf("\nseven"); break;
+	    case eight: printf("\neight"); break;
+	    case nine: printf("\nnine"); break;
+	    case ten: printf("\nten"); break;
+	    case eleven: printf("\neleven"); break;
+	    case twelve: printf("\ntwelve"); break;
+	    
+	}
+}
+main()
+{
+ enum month  c; char str[4]; enum month order;
+	printf("\nInput manth: ");
+	scanf("%s", &str);
+
+	input(str, &c);
+	change(c, &order);
+
+	output(order);
+	return 0;
+}
+ 
+ 
